@@ -1,0 +1,11 @@
+<div class="your-vote-container">
+
+  <span class="your-vote-label">Your vote</span>
+
+  <mat-button-toggle-group class="vote" [formControl]="yourVote" (change)="voted.emit(yourVote.value)">
+    <mat-button-toggle class="vote-card-button" *ngFor="let card of cards" [value]="card">
+      {{card}}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+</div>

@@ -1,0 +1,52 @@
+<form [formGroup]="pokerForm" (ngSubmit)="submit()" disabled="disabled">
+  <div class="card">
+
+    <div class="card-header card-header-primary card-header-icon">
+      <div class="card-icon">
+        <i class="material-icons">add</i>
+      </div>
+      <h4 class="card-title">New Poker Game</h4>
+    </div>
+
+    <div class="card-body">
+
+      <mat-form-field appearance="standard">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="pokerName" placeholder="Enter a name">
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Card set</mat-label>
+        <mat-select placeholder="Choose one type of card" formControlName="cardSet">
+          <mat-option *ngFor="let cardSet of cardSets" [value]="cardSet.code">
+            {{cardSet.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="poker-custom-cards" *ngIf="showCards">
+        <h4 class="poker-cards-header">Cards</h4>
+
+        <div class="poker-cards-array" formArrayName="cards">
+          <div class="add-card">
+            <a mat-fab color="warn" (click)="addCard()">
+              <mat-icon aria-label="Add a custom card">add</mat-icon>
+            </a>
+          </div>
+          <div class="poker-card" *ngFor="let card of cards.controls;let i = index;">
+            <mat-form-field appearance="standard">
+              <input type="text" matInput size="4" placeholder="Card label" [formControlName]="i">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <button type="submit" mat-raised-button color="primary" [disabled]="!pokerForm.valid">
+        Create
+      </button>
+    </div>
+  </div>
+</form>

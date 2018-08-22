@@ -1,0 +1,66 @@
+:host {
+  .card {
+    padding: 0 1rem;
+  }
+
+  .login-col {
+    background-color: whitesmoke;
+  }
+
+  .register-col {
+    background-color: #00acc1;
+    color: white;
+  }
+
+  .login-card {
+    display: flex;
+
+    .sign-in,
+    .sign-up {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-title {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .body {
+      flex: 1;
+    }
+
+    .footer {
+      justify-content: center;
+    }
+
+    .sign-in {
+      background-color: whitesmoke;
+      border-radius: 8px 0 0 8px;
+      flex: 65%;
+
+      .forgot-password {
+        text-align: right;
+      }
+    }
+
+    .sign-up {
+      background-color: #00acc1;
+      color: white;
+      border-radius: 0 8px 8px 0;
+      flex: 35%;
+
+      .add-account-icon {
+        text-align: center;
+
+        mat-icon {
+          font-size: 60px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+  }
+}

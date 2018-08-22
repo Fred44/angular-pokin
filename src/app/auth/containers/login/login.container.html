@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="col-lg-9 col-md-10 mr-auto ml-auto">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div class="login-card">
+
+      <div class="sign-in">
+        <h3 class="login-title">Login</h3>
+
+        <div class="body">
+          <div class="alert alert-danger" *ngIf="error$ | async as error">
+            <button aria-label="Close" class="close mat-button" data-dismiss="alert" mat-button type="button"><span class="mat-button-wrapper"><i class="material-icons">close</i></span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+            <span>{{error.message}}</span>
+          </div>
+
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <mat-icon matPrefix>email</mat-icon>
+            <input type="text" matInput formControlName="email" placeholder="Enter your email">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input type="password" matInput formControlName="password" placeholder="Enter your password">
+          </mat-form-field>
+
+          <p class="forgot-password">
+            <a routerLink=".">I forgot my password</a>
+          </p>
+        </div>
+
+        <div class="footer">
+          <button mat-flat-button color="primary" class="login" type="submit" [disabled]="!loginForm.valid || (pending$|async)">Login</button>
+        </div>
+
+      </div>
+
+      <div class="sign-up">
+        <h3 class="login-title">Register</h3>
+
+        <div class="body">
+          <p class="add-account-icon"><mat-icon>person_add</mat-icon></p>
+          <p>Not yet an account ! Create one in a couple of seconds.</p>
+        </div>
+
+        <div class="footer">
+          <a mat-flat-button color="secondary" routerLink="/user/register">Create</a>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+      <!--<div class="card login-card">-->
+
+        <!--<div class="card-header card-header-primary">-->
+          <!--<h4 class="card-title">Login</h4>-->
+        <!--</div>-->
+
+        <!--<div class="container">-->
+
+          <!--<div class="row">-->
+            <!--<div class="col-md-6 login-col">-->
+              <!--<h3>Login</h3>-->
+            <!--</div>-->
+            <!--<div class="col-md-6 register-col">-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="row">-->
+            <!--<div class="col-md-6 login-col">-->
+
+            <!--</div>-->
+
+            <!--<div class="col-md-6 register-col">-->
+            <!--</div>-->
+
+          <!--</div>-->
+
+        <!--</div>-->
+
+        <!--<div class="card-footer justify-content-center">-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</form>-->
+
+  </div>
+</div>

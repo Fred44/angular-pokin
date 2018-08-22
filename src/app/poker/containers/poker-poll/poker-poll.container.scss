@@ -1,0 +1,32 @@
+:host {
+
+  .card-header {
+    display: flex;
+
+    .card-title {
+      flex-grow: 1;
+    }
+
+    .card-toolbar {
+      margin: -6px 0;
+    }
+  }
+
+  .vote {
+    display: flex;
+    box-shadow: none;
+
+    .vote-card-button {
+      border: 2px solid;
+      border-radius: 5px;
+      height: 5rem;
+      width: 4.5rem;
+      display: flex;
+      justify-content: center;
+      font-size: x-large;
+      font-weight: bold;
+      flex-grow: 1;
+      margin: 0 5px;
+    }
+  }
+}

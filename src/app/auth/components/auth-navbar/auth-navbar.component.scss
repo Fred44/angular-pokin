@@ -1,0 +1,28 @@
+:host {
+
+  .auth-navbar .container {
+    display: flex;
+    margin-bottom: 5rem;
+
+    .navbar-brand {
+      color: white;
+      align-self: center;
+      font-size: x-large;
+    }
+
+    .nav-items {
+      flex: 1;
+      text-align: right;
+
+      .btn-link {
+        color: white;
+        margin-left: 4px;
+
+        &.active {
+          background-color: darkgray;
+        }
+      }
+    }
+  }
+
+}

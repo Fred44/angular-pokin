@@ -1,0 +1,20 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="loading-wrapper" *ngIf="pending">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="error$ | async as error">
+      <button aria-label="Close" class="close mat-button" data-dismiss="alert" mat-button type="button"><span class="mat-button-wrapper"><i class="material-icons">close</i></span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+      <span>{{error.message}}</span>
+    </div>
+
+    <app-poker-new-form
+      [poker]="pokerOptions"
+      [cardSets]="cardSets"
+      (submitted)="onFormSubmitted($event)">
+    </app-poker-new-form>
+
+  </div>
+</div>

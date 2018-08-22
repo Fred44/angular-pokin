@@ -1,0 +1,27 @@
+:host {
+
+  .poker-custom-cards {
+
+    .poker-cards-array {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .poker-card {
+      width: 7rem;
+      padding: 0 1rem;
+      margin: 0.5rem;
+      border: 2px solid lightgray;
+      border-radius: 5px;
+    }
+
+    .add-card {
+      display: flex;
+      justify-content: center;
+
+      a {
+        align-self: center;
+      }
+    }
+  }
+}
